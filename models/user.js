@@ -1,5 +1,5 @@
 'use strict';
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 const {
   Model
 } = require('sequelize');
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         isEmail: {
-          msg:'Invalid email'
+          msg: 'Invalid email'
         }
       }
     },
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: {
           args: [8, 99],
-          msg: 'password must be between 8 and 99 characters'
+          msg: 'Password must be between 8 and 99 character'
         }
       }
     }
@@ -45,23 +45,27 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'user',
   });
+  
   user.addHook('beforeCreate', function(pendingUser) {
     // hash the password for us
-    let hash = bcrypt.hashSync(pendingUser.password, 12)
+     let hash = bcrypt.hashSync(pendingUser.password, 12);
+    // set password to the hash 
+    pendingUser.password = hash;
+  });
 
-    pendingUser.password = hash
-
-  })
-  user.prototype.validPassword = function(passwordTyped){
-    let correctPassword = bcrypt.compareSync(passwordTyped, this.password) 
+  user.prototype.validPassword = function(passwordTyped) {
+    let correctPassword = bcrypt.compareSync(passwordTyped, this.password);
+    // return true or false based on correct password
     return correctPassword;
-  }
-
-  user.prototype.toJSON = function(){
-    let userData = this.get()
-    delete userData.password
-    return userData
-  }
+  };
+  
+  // remove the password before it get serialized (answer when used)
+  user.prototype.toJSON = function() {
+    let userData = this.get();
+    delete userData.password;
+    return userData;
+  };
 
   return user;
+
 };

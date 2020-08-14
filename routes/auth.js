@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../models')
-const passport = require('../config/ppConfig')
+const db = require('../models');
+const passport = require('../config/ppConfig');
 
 router.get('/signup', (req, res) => {
   res.render('auth/signup');
@@ -11,50 +11,55 @@ router.get('/login', (req, res) => {
   res.render('auth/login');
 });
 
-router.post('/signup', (req, res)=>{
-  console.log(req.body)
+router.post('/signup', (req, res) => {
+  console.log(req.body);
   db.user.findOrCreate({
-    where: {email: req.body.email},
-    defaults: {
+    where: { email: req.body.email },
+    defaults: { 
       name: req.body.name,
       password: req.body.password
     }
   })
-    .then(([user, created])=>{
-      if (created){
-        console.log(`${user.name} was created`)
-       passport.authenticate('local',{
-          sucessRedirect: '/',
-         successFlash: 'account created'
-       })(req, res)
+  .then(([user, created]) => {
+    if (created) {
+      // if created, success and redirect to home
+      console.log(`${user.name} was created`);
+      // FLASH MESSAGE
+      passport.authenticate('local', {
+        successRedirect: '/',
+        successFlash: 'Account created and logging in'
+        
+      })(req, res, next );
+      // before passport authenicate
+      // res.redirect('/');
+    } else {
+      // Email already exist
+      console.log('Email already exist');
+      // FLASH
+      req.flash('error','Email already exist. Please try again.');
+      res.redirect('/auth/signup');
+    }
+  })
+  .catch(error => {
+    console.log('Error', error);
+    req.flash('error',`Error, unfortunately... ${error}`);
+    res.redirect('/auth/signup');
+  });
+});
 
-        //res.redirect('/')
-      } else {
-        //email already exist
-        console.log('email already exist')
-        req.flash('email exist')
-        res.redirect('/auth/signup')
-      }
-    })
-    .catch(err =>{
-      console.log('error', err)
-      req.flash(`error.. ${err}`)
-      res.redirect('/auth/signup')
-    })
-})
-router.post('/login', passport.authenticate('local',{
+// FLASH MESSAGE
+router.post('/login', passport.authenticate('local', {
+  successFlash: 'Welcome back.',
   successRedirect: '/',
-  failureRedirect: '/auth/login',
-  successFlash: 'welcome back',
-  failureFlash: 'incorrect email or passwrod, try again'
-}))
+  failureFlash: 'Either email or password is incorrect. Please try again.',
+  failureRedirect: '/auth/login'
+}));
 
-//log out
-router.get('/logout', (req, res)=>{
-  req.logOut()
-  // flash message
-  req.flash('see you soon. logging out')
-  res.redirect('/')
-})
+router.get('/logout', (req, res) => {
+  req.logOut();
+  // FLASH MESSAGE
+  req.flash('success','See you soon. Logging out.');
+  res.redirect('/');
+});
 
 module.exports = router;
