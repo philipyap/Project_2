@@ -8,13 +8,16 @@
                     <img style="width:300px;height:300px;margin: 50px;box-shadow: 5px 3px 5px 3px pink;" src="<%= s.imgUrl %>" alt="image">
                     <p><%= s.title %></p>
                     <p><%= s.measure %></p>
+                    <p><%= s.ingredient %></p>
                     <p><%= s.instruction %></p>
                     <% s.comments.forEach(c => { %> 
                     <div style="color: red;">
                         <p><%= c.content%></p>
+                        </br>
+                        </br>
                     </div>
                     <% }) %>
-                    <div class="card panel">
+                    <div>
                         <h6>Add a comment:</h6>
                         <form method="POST" action="/comments/cookbook">                        
                             <input type="text" id="content" name="content" required> 
@@ -22,16 +25,12 @@
                             <input type="hidden" name="recipeId" value="<%= s.id %>">
                             <button style="margin: 5px;" class="btn btn-primary #bf360c deep-orange darken-4" type="submit" ><i class="material-icons center">add_circle_outline</i></button>                         
                         </form>
-                      </div>
-                      
+                      </div>       
                     <form method="POST" action="/client/cookbook/<%= s.id %>?_method=DELETE">
                         <input style="margin: 5px;" class="btn btn-primary #bf360c deep-orange darken-4" type="submit" value="Delete">
-                    </form>
-                    
-                    
+                    </form> 
                     <% }) %>
-                    <% } %>    
-            
+                    <% } %>       
          </div>
     </div>
 </div>
