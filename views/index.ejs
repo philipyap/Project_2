@@ -1,1 +1,34 @@
-<h2>Homepage</h2>
+<div class="row" style="text-align: center; margin: 100px;">
+    <% if(!currentUser) {%>
+        <div>
+            <h3 style="font-family:courier;">Welcome To The Food Blog World</h3>
+            <div class="heartbeat">
+                <img src="./image/food9.jpeg" alt="image" >
+                <img src="./image/food1.jpg" alt="image" >
+                <img src="./image/food2.jpeg" alt="image" >
+                <img src="./image/food8.jpeg" alt="image" >
+                <img src="./image/food7.jpeg" alt="image" >
+                <img src="./image/food3.jpeg" alt="image" >
+                <img src="./image/foor6.jpeg" alt="image" >
+                <img src="./image/food5.jpeg" alt="image" >
+            </div>
+        </div>
+        <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/auth/signup"><i class="material-icons right">add</i>Signup</a>
+        <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/auth/login"><i class="material-icons right" >location_city</i>Login</a>
+    <% } else { %>
+        <h3 style="font-family:courier;">Welcome Back To Your Food Blog</h3>
+            <div class="heartbeat">
+                <img src="./image/food9.jpeg" alt="image" >
+                <img src="./image/food1.jpg" alt="image" >
+                <img src="./image/food2.jpeg" alt="image" >
+                <img src="./image/food8.jpeg" alt="image" >
+                <img src="./image/food7.jpeg" alt="image" >
+                <img src="./image/food3.jpeg" alt="image" >
+                <img src="./image/foor6.jpeg" alt="image" >
+                <img src="./image/food5.jpeg" alt="image" >
+            </div>
+        <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/profile"><i class="material-icons right">search</i>Search</a>
+        <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/cookbook"><i class="material-icons right" >favorite</i>Favorite</a>
+    <% } %>    
+</div>
+

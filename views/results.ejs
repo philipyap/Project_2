@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+
+<h4 style="text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;margin:50px;">Recipe Found</h4>
+
+<%if(recipes) { %>
+    <% for ( let i = 0; i < recipes.length; i++) { %>
+        <form method="POST" action="/client">
+            <input hidden type="text" name="imgUrl" id="imgUrl" value="<%= recipes[i].strMealThumb %>">
+            <input hidden type="text" name="title" id="title" value="<%= recipes[i].strMeal %>">
+            <input hidden type="text" name="measure" id="measure" value="<%= recipes[i].strTags %>">
+            <input hidden type="text" name="instruction" id="instruction" value="<%= recipes[i].strInstructions %>">
+            <input hidden type="text" name="ingredient" id="ingredient" value="<%= recipes[i].strArea %>">
+
+            <div style="text-align:center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                <img style="width:300px;height:300px;margin: 50px;box-shadow: 5px 3px 5px 3px pink;" src="<%= recipes[i].strMealThumb %>" alt="<%= recipes[i].strMeal %>image">
+                <p><span style="font-weight: bold;">Title: </span><%= recipes[i].strMeal %></p>
+                <p><span style="font-weight: bold;">Category: </span><%= recipes[i].strCategory %></p>
+                <p><span style="font-weight: bold;">Type: </span><%= recipes[i].strTags %></p>
+                <p><span style="font-weight: bold;">Area: </span><%= recipes[i].strArea %></p>
+                <p style="font-weight: bold;">Ingredients: </p>
+                <div>
+                    <p><%= recipes[i].strIngredient1 %> <%= recipes[i].strMeasure1%></p>   
+                    <p><%= recipes[i].strIngredient2 %> <%= recipes[i].strMeasure2%></p> 
+                    <p><%= recipes[i].strIngredient3 %> <%= recipes[i].strMeasure3%></p> 
+                    <p><%= recipes[i].strIngredient4 %> <%= recipes[i].strMeasure4%></p> 
+                    <p><%= recipes[i].strIngredient5 %> <%= recipes[i].strMeasure5%></p> 
+                    <p><%= recipes[i].strIngredient6 %> <%= recipes[i].strMeasure6%></p> 
+                    <p><%= recipes[i].strIngredient7 %> <%= recipes[i].strMeasure7%></p> 
+                    <p><%= recipes[i].strIngredient8 %> <%= recipes[i].strMeasure8%></p> 
+                    <p><%= recipes[i].strIngredient9 %> <%= recipes[i].strMeasure9%></p> 
+                    <p><%= recipes[i].strIngredient10 %> <%= recipes[i].strMeasure10%></p> 
+                    <p><%= recipes[i].strIngredient11 %> <%= recipes[i].strMeasure11%></p> 
+                    <p><%= recipes[i].strIngredient12 %> <%= recipes[i].strMeasure12%></p> 
+                    <p><%= recipes[i].strIngredient13 %> <%= recipes[i].strMeasure13%></p> 
+                    <p><%= recipes[i].strIngredient14 %> <%= recipes[i].strMeasure14%></p> 
+                    <p><%= recipes[i].strIngredient15 %> <%= recipes[i].strMeasure15%></p>
+                    <p><%= recipes[i].strIngredient16 %> <%= recipes[i].strMeasure16%></p> 
+                    <p><%= recipes[i].strIngredient17 %> <%= recipes[i].strMeasure17%></p> 
+                    <p><%= recipes[i].strIngredient18 %> <%= recipes[i].strMeasure18%></p> 
+                    <p><%= recipes[i].strIngredient19 %> <%= recipes[i].strMeasure19%></p> 
+                    <p><%= recipes[i].strIngredient20 %> <%= recipes[i].strMeasure20%></p>  
+                </div>
+                <p style="font-weight: bold;">Instruction:</p>
+                <p><%= recipes[i].strInstructions %></p>
+                <button class="#ff1744 red accent-3" style="padding: 10px;" type="submit"><i class="material-icons center ">favorite</i></button>    
+            </div>
+        </form>
+        <% } %>    
+<% } else { %>   
+    <div> no recipe found </div>
+<% } %>    
+</div>
+</div>
+</div>

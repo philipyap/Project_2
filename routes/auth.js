@@ -29,7 +29,7 @@ router.post('/signup', (req, res) => {
         successRedirect: '/',
         successFlash: 'Account created and logging in'
         
-      })(req, res, next );
+      })(req, res );
       // before passport authenicate
       // res.redirect('/');
     } else {
