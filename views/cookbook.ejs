@@ -5,8 +5,8 @@
                   
             <% if (recipes.length > 0) { %> 
                 <% recipes.forEach(function(s) { %>
-                    <img style="width:300px;height:300px;margin: 50px;box-shadow: 5px 3px 5px 3px pink;" src="<%= s.imgUrl %>" alt="">
-                    <img style="width:300px;height:300px;margin: 50px;box-shadow: 5px 3px 5px 3px pink;" src="<%= s.imgOneUrl %>" alt="">
+                    <img style="width:300px;height:300px;margin: 50px;" src="<%= s.imgUrl %>" alt="">
+                    <img style="width:300px;height:300px;margin: 50px;" src="<%= s.imgOneUrl %>" alt="">
                     <p><%= s.title %></p>
                     <p><%= s.titleOne %></p>
                     <p><%= s.measure %></p>
@@ -16,7 +16,7 @@
                     <div style="color: red;">
                         <p><%= c.content%></p>
                         </br>
-                        </br>
+                        
                     </div>
                     <% }) %>
                     <div>
@@ -30,7 +30,7 @@
                         </form>
                       </div>       
                     <form method="POST" action="/client/cookbook/<%= s.id %>?_method=DELETE">
-                        <input style="margin: 5px;" class="btn btn-primary #bf360c deep-orange darken-4" type="submit" value="Delete">
+                        <button style="margin: 5px;" class="btn btn-primary #bf360c deep-orange darken-4" type="submit" value="Delete"><i class="material-icons center">delete</i></button>
                     </form> 
                     <% }) %>
                     <% } %>      

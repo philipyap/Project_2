@@ -1,9 +1,11 @@
 
-            <div style="text-align: center; margin: 100px; ">
+            <div style="text-align: center; margin: 100px; " data-target="mobile-demo">
                 <% if(!currentUser) {%>
                     <div>
-                        <h3 style="font-weight:bold;font-family:courier;">Welcome To The Food and Cocktail Blog </h3>
+                        <h3 style="font-weight:bold;font-family:courier;">Welcome To Food and Cocktail Blog </h3>
                         <h5 style="font-family:courier;">You can find your favorite food and cocktail recipes here</h5>
+                    </br>
+           
                         <div class="heartbeat">
                             <img src="./image/drink2.jpeg" alt="image" >
                             <img src="./image/food2.jpeg" alt="image" >
@@ -19,11 +21,12 @@
                             <img src="./image/food13.jpeg" alt="image" >
                         </div>
                     </div>
-                    <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/auth/signup"><i class="material-icons right">add</i>Signup</a>
-                    <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/auth/login"><i class="material-icons right" >location_city</i>Login</a>
+                    
                 <% } else { %>
-                    <h3 style="font-weight:bold;font-family:courier;">Welcome Back To Your Food and Cocktail Blog</h3>
-                    <h5 style="font-family:courier;">Can't wait to see your favorite food and drink blog posts !</h5>
+                    <h3 style="font-weight:bold;font-family:courier;">Welcome Back To Your Blog</h3>
+                    <h5 style="font-family:courier;">Can't wait to see your favorite blog posts !</h5>
+                </br>
+          
                         <div class="heartbeat">
                             <img src="./image/drink2.jpeg" alt="image" >
                             <img src="./image/food2.jpeg" alt="image" >
@@ -38,8 +41,7 @@
                             <img src="./image/food3.jpeg" alt="image" >
                             <img src="./image/food13.jpeg" alt="image" >
                         </div>
-                    <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/profile"><i class="material-icons right">search</i>Search</a>
-                    <a style="margin: 50px;" class="waves-effect waves-light btn #bf360c deep-orange darken-4" a href="/cookbook"><i class="material-icons right" >favorite</i>Favorite</a>
+                    
                 <% } %>    
             </div>
 
