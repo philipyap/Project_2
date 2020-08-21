@@ -11,6 +11,9 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
+      titleOne:{
+        type: Sequelize.STRING
+      },
       userId: {
         type: Sequelize.INTEGER
       },
@@ -24,6 +27,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       imgUrl: {
+        type: Sequelize.STRING
+      },
+      imgOneUrl: {
         type: Sequelize.STRING
       },
       createdAt: {

@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.comment.belongsTo(models.recipe)
-      models.comment.belongsTo(models.user)
+     
     }
   };
   comment.init({

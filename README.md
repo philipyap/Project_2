@@ -1,17 +1,20 @@
 # Project 2
 ```https://philip-heroku-deployment.herokuapp.com/```
-## I decided to do Food Blog that the users are able to search, add fav, and leave comments to the food recipes.
-#### This is an app that doen't request an API_kEY. So, anyone who wants to fork and clone can only need to use the API URL that in the JS file. More API URL are available here : https://www.themealdb.com/api.php 
+
+## I decided to do Food and drink Blog that users are able to search, add fav, and leave comments to their fav page.
+#### This is an app that doen't request any API_kEY. So, anyone who wants to fork and clone only need to use the API URL that in the JS file. More API URL are available here : 
+```https://www.themealdb.com/api.php``` 
+```https://www.thecocktaildb.com/api.php```
 ----------------------------------------------------------
 ### ERD
 https://whimsical.com/NxBB1zQyHFAL8Ehcib6UvN (might not available for everyone to view)
 ----------------------------------------------------------
 ### User Stories
-1. user wants to create his/her own food blog
-2. user is able to search recipes
-3. user is able to view the recipes that he/she adds to favorite
-4. user can add recipes and comments to the favorite page
-5. user is able to delete the favorite recipes that they save
+1. user wants to create his/her own food and drink blog
+2. user is able to search recipes on the app
+3. user is able to view the food and drink after the user adds it to favorite page
+4. user can add recipes and comments into the favorite page
+5. user is able to delete the favorite recipes 
 6. different users can log in to their own favorite page
 ----------------------------------------------------------
 ### Wireframes

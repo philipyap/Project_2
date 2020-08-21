@@ -7,20 +7,20 @@
                 <%if(recipes) { %>
                     <% for ( let i = 0; i < recipes.length; i++) { %>
                         <form method="POST" action="/client">
-                            <input hidden type="text" name="imgUrl" id="imgUrl" value="<%= recipes[i].strMealThumb %>">
-                            <input hidden type="text" name="title" id="title" value="<%= recipes[i].strMeal %>">
-                            <input hidden type="text" name="measure" id="measure" value="<%= recipes[i].strTags %>">
-                            <input hidden type="text" name="ingredient" id="ingredient" value="<%= recipes[i].strArea %>">
+                            <input hidden type="text" name="imgOneUrl" id="imgOneUrl" value="<%= recipes[i].strDrinkThumb %>">
+                            <input hidden type="text" name="titleOne" id="titleOne" value="<%= recipes[i].strDrink %>">
+                            <input hidden type="text" name="measure" id="measure" value="<%= recipes[i].strGlass %>">
+                            <input hidden type="text" name="ingredient" id="ingredient" value="<%= recipes[i].strCategory %>">
                             <input hidden type="text" name="instruction" id="instruction" value="<%= recipes[i].strInstructions %>">
-                                  
+
                             <div style="text-align:center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                                <img style="width:300px;height:300px;margin: 50px;box-shadow: 5px 3px 5px 3px pink;" src="<%= recipes[i].strMealThumb %>" alt="<%= recipes[i].strMeal %>image">
-                                <p><span style="font-weight: bold;">Title: </span><%= recipes[i].strMeal %></p>
-                                <p><span style="font-weight: bold;">Category: </span><%= recipes[i].strCategory %></p>
-                                <p><span style="font-weight: bold;">Type: </span><%= recipes[i].strTags %></p>
-                                <p><span style="font-weight: bold;">Area: </span><%= recipes[i].strArea %></p>
-                                <p style="font-weight: bold;">Ingredients: </p>
- 
+                            <img style="width:300px;height:300px;margin: 50px;box-shadow: 5px 3px 5px 3px pink;" src="<%= recipes[i].strDrinkThumb %>" alt="<%= recipes[i].strDrink %>image">
+                            <p><span style="font-weight: bold;">Title: </span><%= recipes[i].strDrink %></p>
+                            <p><span style="font-weight: bold;">Category: </span><%= recipes[i].strCategory %></p>
+                            <p><span style="font-weight: bold;">Type: </span><%= recipes[i].strTags %></p>
+                            <p><span style="font-weight: bold;">Glass: </span><%= recipes[i].strGlass %></p>
+                            <p style="font-weight: bold;">Ingredients: </p>
+
                             <div>
                                 <p><%= recipes[i].strIngredient1 %> <%= recipes[i].strMeasure1%></p>   
                                 <p><%= recipes[i].strIngredient2 %> <%= recipes[i].strMeasure2%></p> 
@@ -42,8 +42,7 @@
                                 <p><%= recipes[i].strIngredient18 %> <%= recipes[i].strMeasure18%></p> 
                                 <p><%= recipes[i].strIngredient19 %> <%= recipes[i].strMeasure19%></p> 
                                 <p><%= recipes[i].strIngredient20 %> <%= recipes[i].strMeasure20%></p>  
-                            </div>                  
-                            
+                            </div>       
                             <p style="font-weight: bold;">Instruction:</p>
                             <p><%= recipes[i].strInstructions %></p>
                             <button class="#ff1744 red accent-3" style="padding: 10px;" type="submit"><i class="material-icons center ">favorite</i></button>    
@@ -53,7 +52,7 @@
 
                 <% } else { %>   
                     <div> no recipe found </div>
-                <% } %>    
-            </div>
+                <% } %>        
         </div>
     </div>
+</div>
