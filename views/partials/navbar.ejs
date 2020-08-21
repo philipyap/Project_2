@@ -1,14 +1,31 @@
-<nav>
+
+
+  <nav>
     <div class="nav-wrapper #6d4c41 brown darken-1">
-      <ul>  
-          <% if (!currentUser) { %>
-            <li><a href="/">Home</a></li>
-          <% } else { %>
+      <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+      <a href="/" class="brand-logo" >Food & Cocktail Blog</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <% if (currentUser) { %>
             <li><a href="/">Home</a></li>
             <li><a href="/profile">Search</a></li>
             <li><a href="/cookbook">Favorite</a></li>
             <li><a href="/auth/logout">Logout</a></li>
-            <% } %> 
+          <% } %> 
       </ul>
+      </div>
     </div>
   </nav>
+
+  <ul class="sidenav" id="mobile-demo" style="background-color: lightgray;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ">
+    <% if (!currentUser) { %>
+      <li><a href="/">Home</a></li>
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+    <% } else { %>
+      <li><a href="/">Home</a></li>
+      <li><a href="/profile">Search</a></li>
+      <li><a href="/cookbook">Favorite</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+    <% } %> 
+  </ul>
