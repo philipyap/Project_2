@@ -23,7 +23,7 @@
                     </br>
                         <h6>Add a comment:</h6>
                         <form method="POST" action="/comments/cookbook">                        
-                            <input type="text" id="content" name="content" required> 
+                            <input style="color:white" type="text" id="content" name="content" required> 
                             <input type="hidden" name="userId" value="<%= s.userId %>">
                             <input type="hidden" name="recipeId" value="<%= s.id %>">
                             <button style="margin: 5px;" class="btn btn-primary #bf360c deep-orange darken-4" type="submit" ><i class="material-icons center">add_circle_outline</i></button>                         
