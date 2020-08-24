@@ -67,7 +67,7 @@ router.delete('/cookbook/:id', (req, res)=>{
         //include: [db.comment, db.user]
     })
     .then(()=>{
-        db.comment.destroy({
+        db.comment.destroy({ // delete comment database
             where: {recipeId: req.params.id}
             
         })
