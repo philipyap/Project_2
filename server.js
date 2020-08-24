@@ -67,9 +67,6 @@ app.get('/cookbook', isLoggedIn, async (req, res) => {
      res.render('cookbook', {recipes:recipes})
      //console.log(recipes)
     }) 
-  .then((drinkRecipes)=>{
-    res,remder('cookbook', {drinkRecipes:drinkRecipes})
-  })   
   .catch(err =>{
     console.log('error', err)
     

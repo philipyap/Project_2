@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.recipe.belongsTo(models.user)
       models.recipe.hasMany(models.comment, {
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE' //the comments will be deleted when the user deletes the recipe
       })
     }
   };

@@ -5,8 +5,8 @@
                   
             <% if (recipes.length > 0) { %> 
                 <% recipes.forEach(function(s) { %>
-                    <img style="width:300px;height:300px;margin: 50px;" src="<%= s.imgUrl %>" alt="">
-                    <img style="width:300px;height:300px;margin: 50px;" src="<%= s.imgOneUrl %>" alt="">
+                    <img style="width:300px;height:300px;margin: 50px;" src="<%= s.imgUrl %><%= s.imgOneUrl %>" alt="">
+                    
                     <p><%= s.title %></p>
                     <p><%= s.titleOne %></p>
                     <p><%= s.measure %></p>
