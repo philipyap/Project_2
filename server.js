@@ -73,13 +73,14 @@ app.get('/cookbook', isLoggedIn, async (req, res) => {
   })
 })
 
-app.get('*', (req, res) => {
-  res.render('404')
-})
 
 app.use('/auth', require('./routes/auth'));
 app.use('/client', require('./routes/client'));
 app.use('/comments', require('./routes/comments'))
+
+app.get('*', (req, res) => {
+  res.render('404')
+})
 
 const port = process.env.PORT || 8000;
 const server = app.listen(port, () => {
