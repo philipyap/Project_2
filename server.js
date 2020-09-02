@@ -57,6 +57,31 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
+app.get('/edit', isLoggedIn, (req, res)=>{
+  res.render('edit')
+})
+
+app.post('/edit', isLoggedIn, (req, res) => {
+  db.user.findOne({
+    where: {email: req.body.email}
+    
+  })
+  .then((user)=>{
+    res.render('update')
+  })
+})
+
+app.put('/update', isLoggedIn, (req, res)=>{
+  db.user.update({
+    email: req.body.email},{
+    where: {id: req.user.id},
+
+  })
+  .then((user)=>{
+    res.redirect('/')
+  })
+})
+
 //favorite
 app.get('/cookbook', isLoggedIn, async (req, res) => {
    await db.recipe.findAll({   
